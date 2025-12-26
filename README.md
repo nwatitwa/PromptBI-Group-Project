@@ -48,7 +48,7 @@ This project analyzes survey data on remote work experiences collected in 2020 a
 
 ---
 
-## Dashboard (Planned)
+## Dashboard
 The interactive story in Tableau includes four main tabs:
 1. **Remote Work Patterns** – visualizing mismatch and actual vs preferred remote work.
 2. **Productivity Insights** – links between mismatch, barriers, and productivity.
