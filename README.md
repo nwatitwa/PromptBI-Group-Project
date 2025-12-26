@@ -1,45 +1,67 @@
-# Remote Work Data Analysis (2-Year Study)
+# Remote Work Survey Analysis
 
-## Project Overview
-This project analyzes a two-year dataset on remote work to identify trends, differences, and outcomes across work types, industries, and time. The goal is to generate clear, evidence-based insights and present them through a shared interactive dashboard.
-
-The analysis focuses on **what changed over time, how remote work compares to other work types, and why these patterns matter for decision-making**.
+## Overview
+This project analyzes survey data on remote work experiences collected in 2020 and 2021. Our goal is to understand factors affecting remote work productivity, barriers, and organizational support, and to prepare an interactive story-style dashboard to communicate insights.
 
 ---
 
-## Workflow & Contributions
-- All team members contribute to **data exploration, cleaning, and analysis**
-- Each analysis task is documented in a **separate notebook**
-- Raw data is never modified directly
-- Cleaning decisions and assumptions are clearly stated
-- Insights are validated before inclusion in the dashboard
+## Data Restructuring
+- **Separate yearly datasets** were combined while maintaining unique respondents (`respondent_id`) and year information.
+- **Long-format transformation** was applied for time-related variables and survey responses.
+- **Normalized column names** across datasets to allow consistent analysis.
+- Created key tables:
+  1. **Respondents** – demographic info (age, gender, household, metro/regional)
+  2. **Job & Organization** – role, industry, org size, management responsibilities
+  3. **Remote Work Patterns** – hours spent remote, preferences
+  4. **Outcomes & Barriers** – productivity, top barriers, work-life impacts
+  5. **Policy & Support** – organizational encouragement, preparedness, autonomy
+  6. **Time Use** – activity breakdown (commuting, working, personal, sleep)
 
 ---
 
-## Key Analysis Themes
-- Remote vs hybrid vs onsite work
-- Trends over the two-year period
-- Industry and role-level differences
-- Productivity, satisfaction, and related outcomes
+## Key Concepts
+- **Mismatch**: difference between actual remote work and preferred remote work, calculated as a percentage difference.
+- **Productivity**: respondents' perceived change in productivity when working remotely (converted from textual Likert or percentage responses to numeric scores).
+- **Policy Support Score**: composite score of 4 Likert-scale questions on organizational support and autonomy.
 
 ---
 
-## Dashboard
-The final dashboard presents validated insights from the analysis in an interactive format.
+## Hypotheses Studied
+1. **H1** – Mismatch and productivity: Does working more/less than preferred affect perceived productivity?
+2. **H2** – Barriers and mismatch: Which barriers (connectivity, management, IT, etc.) are associated with mismatch?
+3. **H3** – Mismatch vs productivity: Spearman correlation and regression analysis.
+4. **H4** – Policy & support vs mismatch and productivity: Composite policy score correlated with mismatch; regression with productivity.
 
-**Dashboard link:**  
-👉 _[Add dashboard link here]_
-
----
-
-## Tools & Technologies
-- Python (Pandas, NumPy, visualization libraries)
-- Jupyter Notebooks
-- Git & GitHub for collaboration
-- Interactive dashboard framework (e.g. Streamlit, Plotly Dash, Power BI)
+*Note*: Columns with qualitative responses (percentages, "more productive," "less productive") were converted to numeric for analysis.
 
 ---
 
-## Notes
-This repository prioritizes **clarity, reproducibility, and analytical reasoning** over visual complexity or excessive modeling.
+## Analysis Approach
+- **Exploratory Data Analysis (EDA)**: summary statistics, distributions, correlations.
+- **Hypothesis Testing**:
+  - Spearman correlations for ordinal variables.
+  - Linear regression for relationships with productivity.
+- **Data Cleaning Considerations**:
+  - Standardized Likert responses.
+  - Converted text-based percentages to numeric.
+  - Handled missing and inconsistent entries.
 
+---
+
+## Dashboard (Planned)
+The interactive story in Tableau includes four main tabs:
+1. **Remote Work Patterns** – visualizing mismatch and actual vs preferred remote work.
+2. **Productivity Insights** – links between mismatch, barriers, and productivity.
+3. **Barriers Overview** – detailed view of top and least barriers for remote work.
+4. **Policy & Support** – showing organizational support, autonomy, and potential improvements.
+
+---
+
+## Future Considerations
+- Extend analysis to longitudinal comparisons between 2020 and 2021.
+- Incorporate sentiment analysis on open-ended responses.
+- Evaluate interventions for reducing mismatch and improving productivity.
+
+---
+
+*All analysis was performed in Python, with data cleaning, transformation, and hypothesis testing handled programmatically before exporting cleaned tables for visualization.*
