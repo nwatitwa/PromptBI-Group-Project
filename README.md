@@ -1,67 +1,57 @@
-# Remote Work Survey Analysis
+# Remote Work Survey Dashboard
 
-## Overview
-This project analyzes survey data on remote work experiences collected in 2020 and 2021. Our goal is to understand factors affecting remote work productivity, barriers, and organizational support, and to prepare an interactive story-style dashboard to communicate insights.
-
----
-
-## Data Restructuring
-- **Separate yearly datasets** were combined while maintaining unique respondents (`respondent_id`) and year information.
-- **Long-format transformation** was applied for time-related variables and survey responses.
-- **Normalized column names** across datasets to allow consistent analysis.
-- Created key tables:
-  1. **Respondents** – demographic info (age, gender, household, metro/regional)
-  2. **Job & Organization** – role, industry, org size, management responsibilities
-  3. **Remote Work Patterns** – hours spent remote, preferences
-  4. **Outcomes & Barriers** – productivity, top barriers, work-life impacts
-  5. **Policy & Support** – organizational encouragement, preparedness, autonomy
-  6. **Time Use** – activity breakdown (commuting, working, personal, sleep)
+This project turns a complex employee survey into a clear, decision-ready story.
+It answers a simple business question: what do employees want from remote work, and where do organizations fall short?
 
 ---
 
-## Key Concepts
-- **Mismatch**: difference between actual remote work and preferred remote work, calculated as a percentage difference.
-- **Productivity**: respondents' perceived change in productivity when working remotely (converted from textual Likert or percentage responses to numeric scores).
-- **Policy Support Score**: composite score of 4 Likert-scale questions on organizational support and autonomy.
+## Why this matters
+Remote work policies affect productivity, retention, and cost. This dashboard helps leaders see:
+- who is working remotely,
+- how preferences differ from reality,
+- what support employees feel they have,
+- and where time is gained or lost.
 
 ---
 
-## Hypotheses Studied
-1. **H1** – Mismatch and productivity: Does working more/less than preferred affect perceived productivity?
-2. **H2** – Barriers and mismatch: Which barriers (connectivity, management, IT, etc.) are associated with mismatch?
-3. **H3** – Mismatch vs productivity: Spearman correlation and regression analysis.
-4. **H4** – Policy & support vs mismatch and productivity: Composite policy score correlated with mismatch; regression with productivity.
+## What the app shows (in plain language)
+**Overview**
+Who the respondents are and what industries they represent.
 
-*Note*: Columns with qualitative responses (percentages, "more productive," "less productive") were converted to numeric for analysis.
+**Demographics**
+How remote work differs by age, gender, company size, and location.
 
----
+**Remote Work**
+The gap between what happened and what people wanted -- before COVID, during COVID, and looking ahead.
 
-## Analysis Approach
-- **Exploratory Data Analysis (EDA)**: summary statistics, distributions, correlations.
-- **Hypothesis Testing**:
-  - Spearman correlations for ordinal variables.
-  - Linear regression for relationships with productivity.
-- **Data Cleaning Considerations**:
-  - Standardized Likert responses.
-  - Converted text-based percentages to numeric.
-  - Handled missing and inconsistent entries.
+**Org Support**
+Whether employees feel supported to work remotely, and how their time shifts between commuting, work, and personal life.
 
 ---
 
-## Dashboard
-The interactive story in PowerBI includes four main tabs:
-1. **Remote Work Patterns** – visualizing mismatch and actual vs preferred remote work.
-2. **Productivity Insights** – links between mismatch, barriers, and productivity.
-3. **Demograpics overview**
-4. **Policy & Support** – showing organizational support, autonomy, and potential improvements.
+## Why a recruiter should care
+This is a demonstration of judgment, not just a dashboard.
+- I started with messy survey data and made it reliable.
+- I chose the minimum number of charts to tell the story clearly.
+- I built a product that non-technical users can understand and act on.
 
 ---
 
-## Future Considerations
-- Extend analysis to longitudinal comparisons between 2020 and 2021.
-- Incorporate sentiment analysis on open-ended responses.
-- Evaluate interventions for reducing mismatch and improving productivity.
+## How it was built (short and simple)
+- Cleaned and standardized raw survey data in Python
+- Explored patterns with EDA
+- Built an interactive Dash app with filters and KPIs
+- Designed for clarity and speed, not complexity
 
 ---
 
-*All analysis was performed in Python, with data cleaning, transformation, and hypothesis testing handled programmatically before exporting cleaned tables for visualization.*
+## Who is this project for?
+1. Individuals dealing with large volumes of data which can't be handled with traditional tools.
+2. Employers curious to learn about general perception towards remote work.
+3. Students of statistics curious to learn how statistical tools are applied in real life.
+
+---
+
+## Contact
+If you want to discuss the project or see it live, feel free to reach out.
+
